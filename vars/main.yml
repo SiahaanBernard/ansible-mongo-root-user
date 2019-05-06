@@ -1,0 +1,4 @@
+---
+mongo_admins_default_database: "admin"
+mongo_admins_default_state: "present"
+mongo_admins_default_update_password: "always"

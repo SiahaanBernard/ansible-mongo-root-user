@@ -1,0 +1,30 @@
+---
+
+- block:
+    - name: ensure root user is present
+      mongodb_user:
+        login_host: "{{ mongo_admins_login_host }}"
+        login_port: "{{ mongo_admins_login_port }}"
+        login_database: "{{ mongo_admins_login_database }}"
+        name: "{{ mongo_admins_login_user }}"
+        password: "{{ mongo_admins_login_password }}"
+        database: "{{ mongo_admins_login_database }}"
+        replica_set: "{{ mongo_admins_replica_set|default(omit) }}"
+        roles: "root"
+        state: "present"
+        update_password: "on_create"
+  rescue:
+    - name: ensure root user is present
+      mongodb_user:
+        login_host: "{{ mongo_admins_login_host }}"
+        login_port: "{{ mongo_admins_login_port }}"
+        login_database: "{{ mongo_admins_login_database }}"
+        login_user: "{{ mongo_admins_login_user }}"
+        login_password: "{{ mongo_admins_login_password }}"
+        name: "{{ mongo_admins_login_user }}"
+        password: "{{ mongo_admins_login_password }}"
+        database: "{{ mongo_admins_login_database }}"
+        replica_set: "{{ mongo_admins_replica_set|default(omit) }}"
+        roles: "root"
+        state: "present"
+        update_password: "on_create"

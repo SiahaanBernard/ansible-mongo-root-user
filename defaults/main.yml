@@ -1,0 +1,5 @@
+---
+mongo_admins_login_host: localhost
+mongo_admins_login_port: 27017
+mongo_admins_login_database: admin
+mongo_admins_login_user: root
