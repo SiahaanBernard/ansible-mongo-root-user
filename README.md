@@ -1,15 +1,13 @@
 # ansible-mongo-root-user #
-
 Create root users for MongoDB.
-
-This roles creates users eith root privilege and sets their passwords using values passed via playbook. If user already exists, it's password will be updated to match the one passed via playbook.
+This role creates user with root privilege and sets the password using value passed via playbook. If user already exists, it's password will be updated to match the one passed via playbook.
 
 ## Requirements ##
 - pymongo installed on remote hosts
 
 ## Role Variables ##
 
-This variable is not declared neither in defaults or vars, but can be passed externally
+This variable is not declared neither in defaults or vars, but must be passed externally
 - name: login_password
   desc: password for root user
 
